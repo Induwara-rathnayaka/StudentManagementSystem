@@ -1,10 +1,14 @@
 package com.example.StudentManagementSystem.repository;
 
+
+
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.StudentManagementSystem.model.Student;
 
 public interface StudentRepository extends JpaRepository<Student,Long> {
-    // JPA provides basic CRUD operations here
+    List<Student> findByYearOfEnrolment(String yearOfEnrollment);
 }
 
