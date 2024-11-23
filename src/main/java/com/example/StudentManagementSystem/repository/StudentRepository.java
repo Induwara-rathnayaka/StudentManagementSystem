@@ -11,5 +11,6 @@ import com.example.StudentManagementSystem.model.Student;
 public interface StudentRepository extends JpaRepository<Student,Long> {
     List<Student> findByYearOfEnrolment(String yearOfEnrollment);
     String findDepartmentById(long id);
+    void removeStudentbyYear(String yearOfEnrollment);
 }
 

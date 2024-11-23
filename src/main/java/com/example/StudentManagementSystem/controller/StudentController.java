@@ -62,4 +62,11 @@ public class StudentController {
         String studentDepartment = studentService.getStudentDepartmentById(id);
         return new ResponseEntity<>(studentDepartment, HttpStatus.OK);
     }
+
+    @DeleteMapping("/{yearOfEnrollment}")
+    public ResponseEntity<String> deleteByYearOfEnrollment(@PathVariable("yearOfEnrollment") String yearOfEnrollment) {
+        studentService.deleteByYearOfEnrollment(yearOfEnrollment);
+        return new ResponseEntity<>("Student deleted successfully",HttpStatus.OK);
+    }
+
 }
