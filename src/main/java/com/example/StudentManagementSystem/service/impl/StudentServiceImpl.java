@@ -47,4 +47,15 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Student not found"));
         studentRepository.deleteById(id);
     }
+
+    @Override
+    public List<Student> getStudentByYearOfEnrollment(String yearOfEnrollment) {
+        return studentRepository.findByYearOfEnrolment(yearOfEnrollment);
+    }
+
+    @Override
+    public String getStudentDepartmentById(long id) {
+        return studentRepository.findDepartmentById(id);
+    }
+
 }
